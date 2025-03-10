@@ -5,9 +5,9 @@
 
 RicettarioX è un'applicazione web che permette agli utenti di registrarsi, effettuare il login e gestire le proprie ricette. Gli utenti possono creare, modificare ed eliminare le proprie ricette personali, oltre a visualizzare le ricette pubbliche condivise da altri utenti.
 
-Inoltre, grazie all'integrazione con l'Intelligenza Artificiale di Spoonacular API,, RicettarioX offre una funzione innovativa che genera automaticamente una ricetta basata sugli ingredienti inseriti dall'utente. Basta aggiungere almeno un ingrediente e l'IA creerà una ricetta originale e creativa in pochi secondi!
+Inoltre, grazie all'integrazione con l'Intelligenza Artificiale di Spoonacular API, RicettarioX offre una funzione innovativa che genera automaticamente una ricetta basata sugli ingredienti inseriti dall'utente. Basta aggiungere almeno un ingrediente e l'IA creerà una ricetta originale e creativa in pochi secondi!
 
-<img src="Frontend/src/assets/img/RicettarioX.png" alt="Screenshot Ricettario X" width="800" height="1600">
+<img src="Frontend/src/assets/img/RicettarioX.png" alt="Screenshot Ricettario X" width="400" height="800">
 
 
 
