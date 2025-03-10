@@ -7,38 +7,32 @@ RicettarioX è un'applicazione web che permette agli utenti di registrarsi, effe
 
 Inoltre, grazie all'integrazione con l'Intelligenza Artificiale di Spoonacular API, RicettarioX offre una funzione innovativa che genera automaticamente una ricetta basata sugli ingredienti inseriti dall'utente. Basta aggiungere almeno un ingrediente e l'IA creerà una ricetta originale e creativa in pochi secondi!
 
-<img src="Frontend/src/assets/img/RicettarioX.png" alt="Screenshot Ricettario X" width="400" height="800">
+<img src="Frontend/src/assets/img/RicettarioX.png" alt="Screenshot Ricettario X" width="400" height="700">
 
 
 
 ## Funzionalità Principali
 
-✔️ Registrazione e login per accedere alle funzionalità personalizzate.
-✔️ Creazione, modifica ed eliminazione di ricette personali.
-✔️ Visualizzazione di ricette pubbliche condivise da altri utenti.
-✔️ Generazione automatica di ricette con IA: inserisci gli ingredienti che hai a disposizione e l'intelligenza artificiale creerà una ricetta originale per te!
-✔️ Sistema di autenticazione sicuro con gestione dei token.
-✔️ Interfaccia utente intuitiva e responsiva.
+- ✔️ Registrazione e login per accedere alle funzionalità personalizzate.
+- ✔️ Creazione, modifica ed eliminazione di ricette personali.
+- ✔️ Visualizzazione di ricette pubbliche condivise da altri utenti.
+- ✔️ Generazione automatica di ricette con IA: inserisci gli ingredienti che hai a disposizione e l'intelligenza artificiale creerà una ricetta originale per te!
+- ✔️ Sistema di autenticazione sicuro con gestione dei token.
+- ✔️ Interfaccia utente intuitiva e responsiva.
 
 ## Tecnologie utilizzate
 
-### Frontend :
-Angular, TypeScript, Bootstrap
+*Frontend*: Angular, TypeScript, Bootstrap
 
-### Backend :
-Django Rest Framework (DRF), Python
+*Backend* :Django Rest Framework (DRF), Python
 
-### Autenticazione :
-JSON Web Token (JWT)
+*Autenticazione* :JSON Web Token (JWT)
 
-### Database :
-MySQL
+*Database*:MySQL
 
-### API :
-API REST 
+*API*:API REST 
 
-### Intelligenza Artificiale: :
-Spoonacular API per la generazione di ricette
+*Intelligenza Artificiale*:Spoonacular API per la generazione di ricette
 
 ## Installazione e Configurazione
 
@@ -48,7 +42,7 @@ Spoonacular API per la generazione di ricette
 
 1. Clonare il repository:
 
-git clone [repository-url]
+git clone 
 
 ### Backend (Django)
 
@@ -80,9 +74,9 @@ npm install
 ng serve
 
 ## 👨‍💻 Autore
-- Nome Cognome : Micaela Ines Juarez Manescotto
-- Email: micaj622@gmail.com
-- GitHub: github.com/MicaelaJ26
+- *Nome Cognome* : Micaela Ines Juarez Manescotto
+- *Email*: micaj622@gmail.com
+- *GitHub*: github.com/MicaelaJ26
 
 
 
