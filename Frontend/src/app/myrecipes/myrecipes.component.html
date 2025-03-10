@@ -1,0 +1,69 @@
+<body>
+    <main class="dashboard-container">
+        <section class="intro">
+            <h3> Libro di Ricette Personale</h3>
+            <p>Aggiungi e condividi le tue ricette con la comunità.</p>
+        </section>
+
+        <nav class="dashboard-menu">        
+            <button class="tab-button" (click)="scrollToSection('add-edit-delete-recipes')">Aggiungi Ricette</button>
+            <button class="tab-button" (click)="navigateToRecipes()">Ricette Pubbliche</button>
+        </nav>
+
+        <section id="my-recipes" class="dashboard-section" [class.hidden]="currentSection !== 'my-recipes'">
+            <h3> Le Mie Ricette</h3>
+            <div *ngIf="recipes.length === 0" class="empty-message">
+                <p>Nessuna ricetta salvata. Inizia ad aggiungere i tuoi piatti preferiti! </p>
+            </div>
+            
+            <div class="recipes-container">
+                <div *ngFor="let recipe of recipes" class="recipe-card">
+                    <img *ngIf="recipe.image_url" [src]="recipe.image_url" alt="Immagine della ricetta" class="recipe-image">
+                    <h4>{{ recipe.title }}</h4>
+                    <p>{{ recipe.ingredients }}</p>
+                    <p>{{ recipe.description }}</p>
+                    <div class="buttons-container">
+                        <!-- <button class="view-btn" (click)="viewDetails(recipe)">Vedi</button> -->
+                        <button class="delete-btn" (click)="editRecipe(recipe)">Editar</button>
+                        <button class="delete-btn" (click)="deleteRecipe(recipe.id!)">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="add-edit-delete-recipes" class="dashboard-section" [class.hidden]="currentSection !== 'add-edit-delete-recipes'">
+            <h3>{{ recipe.id ? 'Modifica Ricetta' : 'Aggiungi Ricetta' }}</h3>
+            <form (ngSubmit)="submitRecipe()" class="recipe-form">
+                <div class="form-group">
+                    <label for="recipe-title">Titolo della Ricetta</label>
+                    <input id="recipe-title" [(ngModel)]="recipe.title" name="title" required />
+                </div>
+                <div class="form-group">
+                    <label for="recipe-ingredients">Ingredienti</label>
+                <textarea id="recipe-ingredients" [(ngModel)]="recipe.ingredients" name="ingredients"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-description">Descrizione</label>
+                    <textarea id="recipe-description" [(ngModel)]="recipe.description" name="description" required></textarea>
+                  </div>
+                <!-- operazione futura  -->
+                <!-- <div class="form-group">
+                    <label for="recipe-photo">Carica una Foto</label>
+                    <input type="file" id="recipe-photo" (change)="onFileSelected($event)">
+                </div>  -->
+                <button type="submit" class="submit-btn">
+                    {{ recipe.id ? 'Salva Modifiche' : 'Aggiungi Ricetta' }}
+                  </button>
+            </form>
+        </section>
+
+        <div id="recipe-modal" class="modal" [ngClass]="{ 'hidden': !showModal }" (click)="closeModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <span class="close" (click)="closeModal()">&times;</span>
+                <h2 *ngIf="modalRecipe">{{ modalRecipe.title }}</h2>
+                <p *ngIf="modalRecipe"><strong>Ingredienti:</strong> {{ modalRecipe.ingredients }}</p>
+                <p *ngIf="modalRecipe">{{ modalRecipe.description }}</p>
+            </div>
+        </div>  
+    </main>
+</body>

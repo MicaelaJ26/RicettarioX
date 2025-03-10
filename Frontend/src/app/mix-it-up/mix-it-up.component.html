@@ -1,0 +1,77 @@
+<div class="recipe-generator-container">
+  <div class="intro">
+    <h1 class="intro">Genera la tua ricetta con l'IA</h1>
+    <p>È facile! Inserisci gli ingredienti che hai e la nostra IA genererà una ricetta deliziosa per te. Provala subito!</p>
+  </div>
+  <button class="generate-btn" (click)="toggleForm()" [disabled]="loading" aria-label="Genera una ricetta con intelligenza artificiale">
+    Genera ricetta con IA
+  </button>
+  <br>
+  <div *ngIf="formVisible" class="ingredient-form">
+    <h2 class="ingredient-form">Inserisci gli ingredienti</h2>
+    
+    <div class="ingredient-input">
+      <input
+        type="text"
+        [(ngModel)]="newIngredient"
+        placeholder="Esempio: Pomodoro"
+        (keyup.enter)="addIngredient()"
+        [disabled]="loading"
+        aria-label="Inserisci un ingrediente"
+      />
+      <button class="add-btn" (click)="addIngredient()" [disabled]="!newIngredient || loading">
+        Aggiungi ingrediente
+      </button>
+    </div>
+    
+    <ul class="ingredient-list">
+      <li *ngFor="let ingredient of ingredients" class="ingredient-item">
+        {{ ingredient }}
+        <button class="remove-btn" (click)="removeIngredient(ingredient)" [disabled]="loading">
+          Rimuovi
+        </button>
+      </li>
+    </ul>
+    
+    <button class="generate-recipe-btn" (click)="generateRecipe()" [disabled]="loading || ingredients.length === 0">
+      Genera ricetta
+    </button>
+  </div>
+  
+  <div *ngIf="loading" class="loading-container">
+    <p>Generazione in corso...</p>
+    <div class="spinner"></div>
+  </div>
+  
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  
+  <div *ngIf="generatedRecipe" class="generated-recipe-container">
+    <div class="generated-recipe-header">
+      <h2>{{ generatedRecipe.title }}</h2>
+    </div>
+    <button class="close-btn" (click)="generatedRecipe = null">✖</button>
+
+    <div class="recipe-details">
+      <img *ngIf="generatedRecipe.image" [src]="generatedRecipe.image" alt="{{ generatedRecipe.title }}" class="recipe-image" />
+      
+      <div class="recipe-section">
+        <h3 class="section-title">Ingredienti</h3>
+        <ul class="ingredient-list">
+          <li *ngFor="let ingredient of generatedRecipe.ingredients" class="ingredient-item">
+            <span class="ingredient-name">{{ ingredient.name }}</span>
+            <span class="ingredient-quantity">{{ ingredient.quantity }}</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="recipe-section">
+        <h3 class="section-title">Passaggi</h3>
+        <ol class="steps-list">
+          <li *ngFor="let step of generatedRecipe.steps" class="step-item">
+            <p>{{ step.description }}</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

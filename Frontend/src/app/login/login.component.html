@@ -1,0 +1,30 @@
+<body>
+  <div class="container">
+    <div class="contact-form">
+      <h2>Benvenuto Chef</h2>
+      <p>Che bello rivederti!</p>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="contenedor-ingreso">
+        <p *ngIf="loginError" class="text-danger">{{ loginError }}</p>
+        <input type="email" formControlName="email" class="caja-input" id="logEmail" placeholder="Email">
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+          <div *ngIf="email?.errors?.['required']">L'email è obbligatoria.</div>
+          <div *ngIf="email?.errors?.['email']">L'email deve avere un formato valido.</div>
+        </div>
+        <div class="password-container">
+          <input [type]="passwordFieldType" formControlName="password" class="caja-input" id="contrasenaIngreso" placeholder="Password">
+          <i class="fa toggle-password" 
+             [ngClass]="passwordFieldType === 'password' ? 'fa-eye-slash' : 'fa-eye'" 
+             (click)="togglePassword()">
+          </i>
+        </div>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger">
+          <div *ngIf="password?.errors?.['required']">La password è obbligatoria.</div>
+        </div>
+        <div class="campo-input">
+          <button type="submit" class="input-submit" [disabled]="loginForm.invalid">Accedi</button>
+        </div>
+        <a class="enlace" (click)="goToRegister()">Non hai ancora un account? <b>Crea un account</b></a>
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,36 @@
+<header class="hero">
+    <div class="message">
+      <h1>Le ricette più deliziose a portata di click!</h1>
+      <p>Ricette semplici, gustose e perfette per ogni occasione. Mettiti ai fornelli con noi!</p>
+    </div>
+  </header>
+  
+  <section class="featured">
+    <h2>Ricette Popolari</h2>
+    <div class="recipes-container">
+          <div class="recipe" *ngFor="let recipe of recipes">
+        <img [src]="recipe.image" [alt]="recipe.title" (click)="openModal(recipe)" style="cursor: pointer;">
+        <p>{{ recipe.title }}</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="join">
+    <div class="overlay">
+      <h2>Diventa parte della nostra community e scopri ricette straordinarie!</h2>
+      <button (click)="navigateToRegister()" class="btn btn-outline-light me-2">Iscriviti</button>
+    </div>
+  </section>
+  
+  <div class="modal" *ngIf="showModal()" role="dialog" aria-labelledby="recipe-title">
+    <div class="modal-content">
+      <button class="close" (click)="closeModal()" aria-label="Chiudi">&times;</button>
+      <img [src]="selectedRecipe()?.image" [alt]="selectedRecipe()?.title">
+      <h3>{{ selectedRecipe()?.title }}</h3>
+      <p><span class="label">Ingredienti:</span> <span class="text">{{ selectedRecipe()?.ingredients }}</span></p>
+      <p><span class="label">Preparazione:</span> <span class="text">{{ selectedRecipe()?.description }}</span></p>
+    </div>
+  </div>
+  
+
+  
