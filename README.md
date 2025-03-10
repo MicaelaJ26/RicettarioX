@@ -1,5 +1,5 @@
 
-# Progetto: 📖 RicettarioX
+# 📖 RicettarioX
 
 ## Descrizione
 
@@ -7,7 +7,8 @@ RicettarioX è un'applicazione web che permette agli utenti di registrarsi, effe
 
 Inoltre, grazie all'integrazione con l'Intelligenza Artificiale di Spoonacular API,, RicettarioX offre una funzione innovativa che genera automaticamente una ricetta basata sugli ingredienti inseriti dall'utente. Basta aggiungere almeno un ingrediente e l'IA creerà una ricetta originale e creativa in pochi secondi!
 
-![Screenshot di RicettarioX](./frontend/src/assets/img/RicettarioX.png)
+![Screenshot di RicettarioX](frontend/src/assets/img/RicettarioX.png)
+
 
 ## Funzionalità Principali
 
@@ -65,22 +66,22 @@ python manage.py runserver
 
 ### Frontend (Angular)
 
-4. Spostarsi nella cartella del frontend:
+5. Spostarsi nella cartella del frontend:
 
 cd frontend
 
-4. Installare le dipendenze:
+6. Installare le dipendenze:
 
 npm install
 
-5. Avviare il server di sviluppo:
+7. Avviare il server di sviluppo:
 
 ng serve
 
 ## 👨‍💻 Autore
-Nome Cognome : Micaela Ines Juarez Manescotto
-Email: micaj622@gmail.com
-GitHub: github.com/MicaelaJ26
+- Nome Cognome : Micaela Ines Juarez Manescotto
+- Email: micaj622@gmail.com
+- GitHub: github.com/MicaelaJ26
 
 
 
